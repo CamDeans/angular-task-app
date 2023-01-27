@@ -1,0 +1,10 @@
+<!-- create ngFor to loop through our list of individual task items in our tasks list 
+     create a new component of type task-item 
+-->
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<app-task-item 
+     *ngFor="let task of tasks" 
+     [task]="task" 
+     (onDeleteTask)="deleteTask(task)"
+     (onToggleReminder)="toggleReminder(task)">
+</app-task-item>
